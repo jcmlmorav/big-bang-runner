@@ -3,10 +3,10 @@ using System.Collections;
 
 public class FollowCharacter : MonoBehaviour {
 
-	public Transform personaje;
-	public float separacion = 6f;
+	public Transform character;
+	public float distance = 6f;
 
 	void Update () {
-		transform.position = new Vector3(personaje.position.x+separacion, transform.position.y, transform.position.z);
+		transform.position = new Vector3(character.position.x+distance, transform.position.y, transform.position.z);
 	}
 }
