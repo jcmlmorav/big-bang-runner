@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ParallaxController : MonoBehaviour {
 
-	public float parallaxSpeed = 0.02f;
+	public float parallaxSpeed = 0.01f;
 	public RawImage background;
 
 	// Use this for initialization

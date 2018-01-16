@@ -1034,7 +1034,7 @@ Prefab:
     - target: {fileID: 114987193770927486, guid: 17e88a602f1fb9743b9002fd4f30a155,
         type: 2}
       propertyPath: timeClone
-      value: 0.96
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17e88a602f1fb9743b9002fd4f30a155, type: 2}

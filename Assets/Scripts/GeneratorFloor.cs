@@ -5,7 +5,7 @@ using UnityEngine;
 public class GeneratorFloor : MonoBehaviour {
 
     public Transform prefab;
-    public float timeClone = .96f;
+    public float timeClone = 48f;
 
     // Use this for initialization
     void Start () {
@@ -18,7 +18,8 @@ public class GeneratorFloor : MonoBehaviour {
     }
 
     void Generate() {
+		float finalSpeed = timeClone * Time.deltaTime;
         Instantiate(prefab, transform.position, Quaternion.identity);
-        Invoke("Generate", timeClone);
+		Invoke("Generate", finalSpeed);
     }
 }
