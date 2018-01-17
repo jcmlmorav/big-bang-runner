@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour {
 
-    public float speed = 2f;
+    public float speed = 2.5f;
 
 	void Start () {
         
