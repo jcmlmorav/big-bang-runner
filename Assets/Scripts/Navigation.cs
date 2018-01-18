@@ -27,4 +27,8 @@ public class Navigation : MonoBehaviour {
 		SceneManager.LoadScene ("Game");
 	}
 
+	public void goToScore() {
+		SceneManager.LoadScene ("About");
+	}
+
 }
