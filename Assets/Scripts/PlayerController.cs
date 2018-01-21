@@ -14,9 +14,16 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
-	public void UpdateState(string state = null) {
-		if (state != null) {
-			animator.Play (state);
+	public void UpdateState(string gameState = null) {
+		if (gameState != null) {
+			switch (gameState) {
+			case "Playing":
+				animator.SetBool ("run", true);
+				break;
+			case "Pause":
+				animator.SetBool( "run", false);
+				break;
+			}
 		}
 	}
 }

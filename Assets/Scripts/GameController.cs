@@ -28,7 +28,9 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		if (gameState == GameState.Playing) {
 			Parallax ();
-			player.SendMessage ("UpdateState", "Run");
+			player.SendMessage ("UpdateState", "Playing");
+		} else if (gameState == GameState.Pause) {
+			player.SendMessage ("UpdateState", "Pause");
 		}
 	}
 
