@@ -5,11 +5,13 @@ using UnityEngine;
 public class MenuStartGame : MonoBehaviour {
 
 	// Instanciar controladores
-	public ParallaxController parallaxController;	
+	public ParallaxController parallaxController;
+	public BranchesScript branchesScript;
 
 	public enum GameState {Idle, Playing};
 	public GameState gameState = GameState.Idle;
 	public GameObject buttonStart;
+
 	//public GameObject personaje;
 
 	// Use this for initialization
@@ -26,6 +28,7 @@ public class MenuStartGame : MonoBehaviour {
 			//personaje.SendMessage("UpdateState", "Run");
 		} else if (gameState == GameState.Playing) {
 			parallaxController.Parallax();
+			branchesScript.Parallax();
 		}	
 	}
 }
