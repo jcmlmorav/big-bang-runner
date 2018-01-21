@@ -240,7 +240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: c54aa46d988f14a2b9fd66830b87da5d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 7b48399d7dd724027962d4c52a666a36, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 393550898}
   - component: {fileID: 393550897}
   m_Layer: 0
-  m_Name: TreesBackground
+  m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: cd1579e3953ba49f4b90358ec0b4375d, type: 3}
+  m_Texture: {fileID: 2800000, guid: 8a0772059f8d84a1cbcde09334c35c10, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 517137516}
   - component: {fileID: 517137515}
   m_Layer: 0
-  m_Name: PlatformBackground
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 1289f87fb73714b3cad1d52bd53c1950, type: 3}
+  m_Texture: {fileID: 2800000, guid: 48b4de829f5e440529bb56e55e4deeb3, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 632398037}
   - component: {fileID: 632398038}
   m_Layer: 0
-  m_Name: jungle-mountain-01-day
+  m_Name: mountain-02-day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +596,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 420175fc2de874e5e8a3fe276a06d39c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e271bba97dfa841359ab1ba17bf884b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -763,9 +763,8 @@ GameObject:
   - component: {fileID: 777609314}
   - component: {fileID: 777609313}
   - component: {fileID: 777609312}
-  - component: {fileID: 777609316}
   m_Layer: 0
-  m_Name: BranchesCanvas
+  m_Name: DecorationFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,19 +846,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &777609316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 777609311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d718d5dee021d41eaabe12d27023b06a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  branchesSpeed: 0.2
-  branches: {fileID: 357611544}
 --- !u!1 &800924607
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,8 +855,9 @@ GameObject:
   m_Component:
   - component: {fileID: 800924609}
   - component: {fileID: 800924608}
+  - component: {fileID: 800924610}
   m_Layer: 0
-  m_Name: ScriptsManager
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,6 +887,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800924610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 800924607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0ebce2ee5c74ff2a6cd6c63413ba5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountainSpeed: 0.01
+  floorSpeed: 0.15
+  treesSpeed: 0.054
+  branchesSpeed: 0.2
+  mountain: {fileID: 1200721318}
+  floor: {fileID: 517137515}
+  trees: {fileID: 393550897}
+  branches: {fileID: 357611544}
 --- !u!1 &866765572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +1033,7 @@ GameObject:
   - component: {fileID: 1200721319}
   - component: {fileID: 1200721318}
   m_Layer: 0
-  m_Name: MountainBackground
+  m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1076,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 14a64a35fd4044a7fbfff60372212dc8, type: 3}
+  m_Texture: {fileID: 2800000, guid: e96f06f360d3e4f42b23d0f744dad6ad, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1094,9 +1100,8 @@ GameObject:
   - component: {fileID: 1230686124}
   - component: {fileID: 1230686123}
   - component: {fileID: 1230686122}
-  - component: {fileID: 1230686125}
   m_Layer: 0
-  m_Name: CanvasFondo
+  m_Name: DecorationBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1180,23 +1185,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
---- !u!114 &1230686125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1230686120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1945d51b32894e96befc318a74d5395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mountainSpeed: 0.01
-  platformSpeed: 0.15
-  treesSpeed: 0.054
-  background: {fileID: 1200721318}
-  platform: {fileID: 517137515}
-  trees: {fileID: 393550897}
 --- !u!1 &1567849567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,7 +1455,7 @@ GameObject:
   - component: {fileID: 1771344355}
   - component: {fileID: 1771344356}
   m_Layer: 0
-  m_Name: cloud-03-day
+  m_Name: cloud-02-day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1520,7 +1508,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ff928e48091a6414681cef8718f94428, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6b24ab9eb8d147429c16bac3e3cd7c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1613,7 +1601,7 @@ GameObject:
   - component: {fileID: 1929091267}
   - component: {fileID: 1929091266}
   m_Layer: 0
-  m_Name: jungle-sky-day
+  m_Name: sky-day
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1641,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c956d174387604b6d9d751f0ebce501d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73f3fc4e41f5a4489b9b81343b6032b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1684,7 +1672,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1933996209}
-  - component: {fileID: 1933996210}
   - component: {fileID: 1933996212}
   - component: {fileID: 1933996211}
   m_Layer: 5
@@ -1693,7 +1680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1933996209
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1713,22 +1700,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1933996210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1933996208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8fcde54f24a4f9992bce83de850da4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxController: {fileID: 1230686125}
-  branchesScript: {fileID: 777609316}
-  gameState: 0
-  buttonStart: {fileID: 2039192347}
-  character: {fileID: 866765572}
 --- !u!114 &1933996211
 MonoBehaviour:
   m_ObjectHideFlags: 0
