@@ -25,5 +25,7 @@ public class GameController : MonoBehaviour {
 		// Pendiente programar la cerrada del juego
 	}
 
-
+	public void LoadIntro() {
+		SceneManager.LoadScene ("Intro");
+	}
 }
