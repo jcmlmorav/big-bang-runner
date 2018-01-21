@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
@@ -22,14 +21,14 @@ public class GameController : MonoBehaviour {
 	public GameObject player;
 
 	public Text timerText;
-	public int timer = 5;
+	public int timer = 3;
 
 	void Start () {
 		StartCoroutine("LoseTime");
 	}
 
 	void Update () {
-		timerText.text = timer.ToString();
+		timerText.text = timer.ToString ();
 		if (timer <= 0) {
 			StopCoroutine("LoseTime");
 			timerText.text = "";
@@ -41,22 +40,6 @@ public class GameController : MonoBehaviour {
 		} else if (gameState == GameState.Pause) {
 			player.SendMessage ("UpdateState", "Pause");
 		}
-	}
-
-	public void LoadGame() {
-		SceneManager.LoadScene ("Game");
-	}
-
-	public void LoadAbout(){
-		SceneManager.LoadScene ("About");
-	}
-
-	public void Exit() {
-		// Pendiente programar la cerrada del juego
-	}
-
-	public void LoadIntro() {
-		SceneManager.LoadScene ("Intro");
 	}
 
 	public void Parallax() {

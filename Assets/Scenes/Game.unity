@@ -254,7 +254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5
+  m_Text: 3
 --- !u!222 &275196647
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
   gameState: 1
   player: {fileID: 866765572}
   timerText: {fileID: 275196646}
-  timer: 5
+  timer: 3
 --- !u!1 &866765572
 GameObject:
   m_ObjectHideFlags: 0
