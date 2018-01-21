@@ -21,11 +21,20 @@ public class GameController : MonoBehaviour {
 
 	public GameObject player;
 
+	public Text timerText;
+	public int timer = 5;
+
 	void Start () {
-		
+		StartCoroutine("LoseTime");
 	}
 
 	void Update () {
+		timerText.text = timer.ToString();
+		if (timer <= 0) {
+			StopCoroutine("LoseTime");
+			timerText.text = "";
+			gameState = GameState.Playing;
+		}
 		if (gameState == GameState.Playing) {
 			Parallax ();
 			player.SendMessage ("UpdateState", "Playing");
@@ -59,5 +68,12 @@ public class GameController : MonoBehaviour {
 		floor.uvRect = new Rect (floor.uvRect.x + finalSpeedFloor, -0.01f, 1f, 1f);
 		trees.uvRect = new Rect (trees.uvRect.x + finalSpeedTrees, 0f, 1f, 1f);
 		branches.uvRect = new Rect (branches.uvRect.x + finalSpeedBranches, 0f, 1f, 1f);
+	}
+
+	IEnumerator LoseTime() {
+		while(true) {
+			yield return new WaitForSeconds(1);
+			timer--;
+		}
 	}
 }
