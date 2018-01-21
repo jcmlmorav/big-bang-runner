@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour {
 	public enum GameState {Playing, Pause};
 	public GameState gameState = GameState.Pause;
 
+	public GameObject player;
+
 	void Start () {
 		
 	}
@@ -26,6 +28,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		if (gameState == GameState.Playing) {
 			Parallax ();
+			player.SendMessage ("UpdateState", "Run");
 		}
 	}
 
