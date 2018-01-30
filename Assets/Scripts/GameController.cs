@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
 	public RawImage trees;
 	public RawImage branches;
 
-	public enum GameState {Playing, Pause};
+	public enum GameState {Playing, Pause, Jump};
 	public GameState gameState = GameState.Pause;
 
 	public GameObject player;
@@ -37,10 +37,10 @@ public class GameController : MonoBehaviour {
 		if (gameState == GameState.Playing) {
 			Parallax ();
 			player.SendMessage ("UpdateState", "Playing");
-		} else if (gameState == GameState.Pause) {
-			player.SendMessage ("UpdateState", "Pause");
-		}
-	}
+        } else if (gameState == GameState.Pause) {
+            player.SendMessage("UpdateState", "Pause");
+        } 
+    }
 
 	public void Parallax() {
 		float finalSpeedMountain = mountainSpeed * Time.deltaTime;
