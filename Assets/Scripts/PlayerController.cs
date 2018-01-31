@@ -13,9 +13,6 @@ public class PlayerController : MonoBehaviour {
     }
 
 	void Update () {
-        if (Input.GetKeyDown("up") || Input.GetMouseButtonDown(0)) { 
-            SendMessage("UpdateState", "Jump"); 
-        }
         if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("Hero1Jump")) {
             SendMessage("UpdateState", "StopJump");
         }

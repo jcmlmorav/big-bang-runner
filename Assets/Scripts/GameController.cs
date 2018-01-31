@@ -59,4 +59,8 @@ public class GameController : MonoBehaviour {
 			timer--;
 		}
 	}
+
+    public void JumpPlayer() {
+        player.SendMessage("UpdateState", "Jump");
+    }
 }
